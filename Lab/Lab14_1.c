@@ -1,21 +1,17 @@
-/* 
- * ÀÛ¼ºÀÏ: 7.3
- * ÇÐ  ¹ø: 20200516 
- */
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #define MAX_STRING 20
 
-// ½ºÅÃ ³ëµå ±¸Á¶Ã¼ NODE ¼±¾ð
+// ìŠ¤íƒ ë…¸ë“œ êµ¬ì¡°ì²´ NODE ì„ ì–¸
 typedef struct NODE
 {
 	char data;
 	struct node *next;
 } NODE;
 
-// ½ºÅÃ Çìµå ±¸Á¶Ã¼ STACK ¼±¾ð
+// ìŠ¤íƒ í—¤ë“œ êµ¬ì¡°ì²´ STACK ì„ ì–¸
 typedef struct
 {
 	int count;
@@ -33,15 +29,15 @@ int main()
 	char str[MAX_STRING];
 	STACK *stack;
 
-	// ½ºÅÃ Çìµå »ý¼º(µ¿ÀûÇÒ´ç) ¹× ÃÊ±âÈ­
+	// ìŠ¤íƒ í—¤ë“œ ìƒì„±(ë™ì í• ë‹¹) ë° ì´ˆê¸°í™”
 	stack = (STACK*)malloc(sizeof(STACK));
 	if (!stack)
 	{
-		printf("µ¿Àû ÇÒ´ç ¿¡·¯\n");
+		printf("ë™ì  í• ë‹¹ ì—ëŸ¬\n");
 		return 100;
 	}
 
-	//ÃÊ±âÈ­
+	//ì´ˆê¸°í™”
 	stack->count = 0;
 	stack->top = '\0';
 
@@ -56,7 +52,7 @@ int main()
 		len = strlen(str);
 		for (i = 0; i < len; i++)
 		{
-			push(stack, str[i]); //push ÇÔ¼ö È£Ãâ
+			push(stack, str[i]); //push í•¨ìˆ˜ í˜¸ì¶œ
 		}
 		printStack(stack);
 
@@ -73,7 +69,7 @@ void printStack(STACK *s)
 	char data;
 
 	printf("   ");
-	while (pop(s, &data)) // ½ºÅÃÀÌ ºô ¶§±îÁö pop ÇÔ¼ö È£Ãâ
+	while (pop(s, &data)) // ìŠ¤íƒì´ ë¹Œ ë•Œê¹Œì§€ pop í•¨ìˆ˜ í˜¸ì¶œ
 	{
 		printf("%c", data);
 	}
@@ -81,15 +77,15 @@ void printStack(STACK *s)
 
 } // printStack
 
-// push ¼º°ø½Ã 1, ½ÇÆÐ½Ã 0À» ¹ÝÈ¯
+// push ì„±ê³µì‹œ 1, ì‹¤íŒ¨ì‹œ 0ì„ ë°˜í™˜
 int push(STACK *s, char data)
 {
 	NODE *temp;
 	int success = 1;
 
-	// ½ºÅÃ ³ëµå »ý¼º
+	// ìŠ¤íƒ ë…¸ë“œ ìƒì„±
 	temp = (NODE*)malloc(sizeof(NODE));
-	if (!temp) // µ¿Àû ÇÒ´ç ½ÇÆÐ½Ã
+	if (!temp) // ë™ì  í• ë‹¹ ì‹¤íŒ¨ì‹œ
 		success = 0;
 	else
 	{
@@ -103,13 +99,13 @@ int push(STACK *s, char data)
 	return success;
 } // push
 
-// pop ¼º°ø½Ã 1, ½ÇÆÐ½Ã 0À» ¹ÝÈ¯
+// pop ì„±ê³µì‹œ 1, ì‹¤íŒ¨ì‹œ 0ì„ ë°˜í™˜
 int pop(STACK *s, char *data)
 {
 	NODE *temp;
 	int success = 1;
 
-	if (!isEmpty(s)) // ½ºÅÃÀÌ ºñ¾î ÀÖÁö ¾ÊÀ¸¸é(isEmpty ÇÔ¼ö È£Ãâ)
+	if (!isEmpty(s)) // ìŠ¤íƒì´ ë¹„ì–´ ìžˆì§€ ì•Šìœ¼ë©´(isEmpty í•¨ìˆ˜ í˜¸ì¶œ)
 	{
 		*data = s->top->data;
 
@@ -119,7 +115,7 @@ int pop(STACK *s, char *data)
 		s->count--;
 
 
-		free(temp); // ³ëµå »èÁ¦
+		free(temp); // ë…¸ë“œ ì‚­ì œ
 	}
 	else
 		success = 0;
@@ -127,7 +123,7 @@ int pop(STACK *s, char *data)
 	return success;
 } // pop
 
-// ½ºÅÃÀÌ ºñ¾î ÀÖÀ¸¸é 1, ±×·¸Áö ¾ÊÀ¸¸é 0À» ¹ÝÈ¯
+// ìŠ¤íƒì´ ë¹„ì–´ ìžˆìœ¼ë©´ 1, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ 0ì„ ë°˜í™˜
 int isEmpty(STACK *s)
 {
 	return s->top == '\0';
