@@ -13,7 +13,7 @@ int main()
 	outfile = fopen("report.txt", "w");
 	
 	fprintf(outfile, "==============================\n");
-	fprintf(outfile, "  ÇĞ¹ø\t\t\tÃÑÁ¡(ÇĞÁ¡)\n");
+	fprintf(outfile, "  학번\t\t\t총점(학점)\n");
 	fprintf(outfile, "==============================\n");
 	
 	for(num = 0; fscanf(infile, "%d %d %d", &name, &mid, &fin) != EOF; num++)
@@ -23,7 +23,7 @@ int main()
 	}
 	
 	fprintf(outfile, "==============================\n");
-	fprintf(outfile, "  Æò±Õ\t\t\t%.1lf\n", sum/num);
+	fprintf(outfile, "  평균\t\t\t%.1lf\n", sum/num);
 	fprintf(outfile, "==============================");
 	
 	fclose(outfile);
