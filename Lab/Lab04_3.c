@@ -27,23 +27,23 @@ void season_print(int season)
 {
 	switch(season / 3){
 		case 1 :
-			printf("%d¿ù, º½\n", season);
+			printf("%dì›”, ë´„\n", season);
 			break;
 		
 		case 2 :
-			printf("%d¿ù, ¿©¸§\n", season);
+			printf("%dì›”, ì—¬ë¦„\n", season);
 			break;
 		
 		case 3 :
-			printf("%d¿ù, °¡À»\n", season);
+			printf("%dì›”, ê°€ì„\n", season);
 			break;
 		
 		case 4 :
-			printf("%d¿ù, °Ü¿ï\n", season);
+			printf("%dì›”, ê²¨ìš¸\n", season);
 			break;
 		
 		case 0 :
-			printf("%d¿ù, °Ü¿ï\n", season);
+			printf("%dì›”, ê²¨ìš¸\n", season);
 			break;
 	}
 }
