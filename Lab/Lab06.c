@@ -13,7 +13,7 @@ int main()
 	outfile = fopen("report.txt", "w");
 	
 	fprintf(outfile, "==============================\n");
-	fprintf(outfile, "  ÇĞ¹ø\t\t\tÃÑÁ¡(ÇĞÁ¡)\n");
+	fprintf(outfile, "  Ã‡ÄÂ¹Ã¸\t\t\tÃƒÃ‘ÃÂ¡(Ã‡ÄÃÂ¡)\n");
 	fprintf(outfile, "==============================\n");
 	
 	for(num = 0; fscanf(infile, "%d %d %d", &name, &mid, &fin) != EOF; num++)
@@ -23,7 +23,7 @@ int main()
 	}
 	
 	fprintf(outfile, "==============================\n");
-	fprintf(outfile, "  Æò±Õ\t\t\t%.1lf\n", sum/num);
+	fprintf(outfile, "  Ã†Ã²Â±Ã•\t\t\t%.1lf\n", sum/num);
 	fprintf(outfile, "==============================");
 	
 	fclose(outfile);
