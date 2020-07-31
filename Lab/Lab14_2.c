@@ -1,21 +1,17 @@
-/*
- * ÀÛ¼ºÀÏ: 7.3
- * ÇĞ  ¹ø: 20200516
- */
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #define MAX_STRING 20
 
- // Å¥ ³ëµå ±¸Á¶Ã¼ NODE ¼±¾ğ
+ // í ë…¸ë“œ êµ¬ì¡°ì²´ NODE ì„ ì–¸
 typedef struct node
 {
 	char data;
 	struct node *next;
 } NODE;
 
-// Å¥ Çìµå ±¸Á¶Ã¼ QUEUE ¼±¾ğ
+// í í—¤ë“œ êµ¬ì¡°ì²´ QUEUE ì„ ì–¸
 typedef struct
 {
 	int count;
@@ -32,9 +28,9 @@ int main()
 {
 	int len, i, ioRes;
 	char str[MAX_STRING];
-	QUEUE queue; // Å¥
+	QUEUE queue; // í
 
-	// Å¥ ÃÊ±âÈ­
+	// í ì´ˆê¸°í™”
 	queue.count = 0;
 	queue.front = '\0';
 	queue.rear = '\0';
@@ -52,7 +48,7 @@ int main()
 		len = strlen(str);
 		for (i = 0; i < len; i++)
 		{
-			enqueue(&queue, str[i]); //enqueue ÇÔ¼ö È£Ãâ
+			enqueue(&queue, str[i]); //enqueue í•¨ìˆ˜ í˜¸ì¶œ
 		}
 
 		printQueue(&queue);
@@ -69,29 +65,29 @@ void printQueue(QUEUE *q)
 	char data;
 
 	printf("   ");
-	while (dequeue(q, &data)) // Å¥°¡ ºô ¶§±îÁö dequeue ÇÔ¼ö È£Ãâ
+	while (dequeue(q, &data)) // íê°€ ë¹Œ ë•Œê¹Œì§€ dequeue í•¨ìˆ˜ í˜¸ì¶œ
 	{
 		printf("%c", data);
 	}
 	printf("\n\n");
 } // printQueue
 
-// enqueue ¼º°ø½Ã 1, ½ÇÆĞ½Ã 0
+// enqueue ì„±ê³µì‹œ 1, ì‹¤íŒ¨ì‹œ 0
 int enqueue(QUEUE *q, char data)
 {
 	NODE *temp;
 
-	// Å¥ ³ëµå »ı¼º
+	// í ë…¸ë“œ ìƒì„±
 	temp = (NODE*)malloc(sizeof(NODE));
-	if (!temp) // µ¿Àû ÇÒ´ç ½ÇÆĞ½Ã
+	if (!temp) // ë™ì  í• ë‹¹ ì‹¤íŒ¨ì‹œ
 		return 0;
 
-	// »ı¼ºÇÑ ³ëµå¿¡ °ª ¼³Á¤
+	// ìƒì„±í•œ ë…¸ë“œì— ê°’ ì„¤ì •
 	temp->data = data;
 	temp->next - '\0';
 
 
-	if (isEmpty(q)) // Å¥°¡ ºñ¾î ÀÖ´Â °æ¿ì(isEmpty ÇÔ¼ö È£Ãâ)
+	if (isEmpty(q)) // íê°€ ë¹„ì–´ ìˆëŠ” ê²½ìš°(isEmpty í•¨ìˆ˜ í˜¸ì¶œ)
 	{
 		q->front = temp;
 		q->rear = temp;
@@ -108,12 +104,12 @@ int enqueue(QUEUE *q, char data)
 	return 1;
 } // enqueue
 
-// dequeue ¼º°ø½Ã 1, ½ÇÆĞ½Ã 0
+// dequeue ì„±ê³µì‹œ 1, ì‹¤íŒ¨ì‹œ 0
 int dequeue(QUEUE *q, char *data)
 {
 	NODE *temp;
 
-	if (isEmpty(q)) // Å¥°¡ ºñ¾î ÀÖ´Â °æ¿ì
+	if (isEmpty(q)) // íê°€ ë¹„ì–´ ìˆëŠ” ê²½ìš°
 		return 0;
 
 	*data = q->front->data;
@@ -126,7 +122,7 @@ int dequeue(QUEUE *q, char *data)
 	return 1;
 } // dequeue
 
-// Å¥°¡ ºñ¾î ÀÖÀ¸¸é 1, ±×·¸Áö ¾ÊÀ¸¸é 0À» ¹İÈ¯
+// íê°€ ë¹„ì–´ ìˆìœ¼ë©´ 1, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ 0ì„ ë°˜í™˜
 int isEmpty(QUEUE *q)
 {
 	return q->count == 0;
