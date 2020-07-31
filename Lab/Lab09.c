@@ -13,7 +13,7 @@ int main()
 		scanf("%d", a+i);
 		
 	printf("Numbers that you enter are: ");
-	partial_print(a, 10); //Ã³À½ºÎÅÍ size10¸¸Å­ 
+	partial_print(a, 10); //ÃƒÂ³Ã€Â½ÂºÃÃ…Ã size10Â¸Â¸Ã…Â­ 
 	
 	printf("\nEnter the starting and ending index: ");
 	scanf("%d%d", &start, &end);
