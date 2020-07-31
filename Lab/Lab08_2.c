@@ -27,7 +27,7 @@ int main()
     return 0;
 }
 
-//---------- ÇÔ¼ö Á¤ÀÇ  ----------//
+//---------- Ã‡Ã”Â¼Ã¶ ÃÂ¤Ã€Ã‡  ----------//
 void bubble_sort(int a[], int size)
 {
 	int bottom, top;
