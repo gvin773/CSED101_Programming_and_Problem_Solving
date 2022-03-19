@@ -20,5 +20,5 @@ Getting ample programming experiences with the C language
 ![structure chart](https://github.com/vincent773/img_for_markdown/blob/main/CSED101/structure%20chart.jpg)
 
 ### Assignment4 - 성적 관리 프로그램
- - 동적 할당을 응용한 Structure(구조체)와 Linked List(연결 리스트)를 활용하여 성정 관리 프로그램 구현
+ - 동적 할당을 응용한 Structure(구조체)와 Linked List(연결 리스트)를 활용하여 성적 관리 프로그램 구현
 ![structure chart](https://github.com/vincent773/img_for_markdown/blob/main/CSED101/assn4%20structure%20chart.jpg)
