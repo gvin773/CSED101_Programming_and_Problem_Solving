@@ -5,7 +5,7 @@ Getting ample programming experiences with the C language
 ## Assignments
 ### Assignment1 - 미니 야구 게임
  - 조건문, 반복문, 사용자 정의 함수 및 라이브러리 함수를 활용하여 미니 야구 게임 구현
-![structure chart](https://github.com/vincent773/CSED101_Programming_and_Problem_Solving/blob/master/Images/assn4%20structure%20chart.jpg)
+![structure chart](https://github.com/vincent773/CSED101_Programming_and_Problem_Solving/blob/master/Images/image.png)
 
 ### Assignment2_1 - HEA 로그인 시스템 (HEA login system)
  - 1차원 배열, 파일 입출력을 활용하여 HEA 로그인 시스템 구현
